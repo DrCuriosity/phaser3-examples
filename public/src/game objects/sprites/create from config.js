@@ -1,24 +1,13 @@
-var config = {
-    type: Phaser.WEBGL,
-    parent: 'phaser-example',
-    width: 800,
-    height: 600,
-    scene: {
-        preload: preload,
-        create: create
-    }
-};
-
-var game = new Phaser.Game(config);
-
-function preload ()
+class CreatreFromConfig extends Phaser.Scene
+{
+     preload ()
 {
     this.load.image('bunny', 'assets/sprites/bunny.png');
     this.load.image('atari', 'assets/sprites/atari400.png');
     this.load.image('logo', 'assets/sprites/phaser2.png');
 }
 
-function create ()
+     create ()
 {
     //  Implicit values
     var config1 = {
@@ -84,4 +73,14 @@ function create ()
     };
 
     this.make.sprite(config8);
+  }
 }
+const config = {
+    type: Phaser.WEBGL,
+    parent: 'phaser-example',
+    width: 800,
+    height: 600,
+    scene: [CreatreFromConfig]
+};
+
+const game = new Phaser.Game(config);
