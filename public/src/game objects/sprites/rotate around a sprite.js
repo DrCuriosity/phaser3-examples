@@ -1,13 +1,3 @@
-let ball1;
-let ball2;
-let ball3;
-
-let angle1 = 0;
-let distance1 = 200;
-
-let angle2 = 0;
-let distance2 = 80;
-
 class Example extends Phaser.Scene
 {
     constructor ()
@@ -41,6 +31,16 @@ class Example extends Phaser.Scene
       angle2 = Phaser.Math.Angle.Wrap(angle2 + 0.03);
     }
 }
+
+let ball1;
+let ball2;
+let ball3;
+
+let angle1 = 0;
+let distance1 = 200;
+
+let angle2 = 0;
+let distance2 = 80;
 
 const config = {
   type: Phaser.AUTO,
