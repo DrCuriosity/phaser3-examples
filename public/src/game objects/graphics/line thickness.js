@@ -1,19 +1,17 @@
-var config = {
-    width: 800,
-    height: 600,
-    type: Phaser.WEBGL,
-    backgroundColor: '#118eb3',
-    parent: 'phaser-example',
-    scene: {
-        create: create
-    }
-};
-
-var game = new Phaser.Game(config);
-
-function create ()
+class Example extends Phaser.Scene
 {
-    var graphics = this.add.graphics();
+    constructor ()
+    {
+        super();
+    }
+
+    preload ()
+    {
+    }
+
+    create ()
+    {
+            let graphics = this.add.graphics();
 
     graphics.lineStyle(20, 0x2ECC40);
 
@@ -30,4 +28,17 @@ function create ()
 
     graphics.closePath();
     graphics.strokePath();
+    }
 }
+
+const config = {
+    width: 800,
+    height: 600,
+    type: Phaser.WEBGL,
+    backgroundColor: '#118eb3',
+    parent: 'phaser-example',
+    scene: [ Example ]
+};
+
+const game = new Phaser.Game(config);
+
