@@ -1,22 +1,18 @@
-class Example extends Phaser.scene
-{
-        constructor ()
-    {
+class Example extends Phaser.scene {
+    constructor () {
         super();
     }
 
-    preload ()
-    {
-    this.load.image('beball', 'assets/sprites/beball1.png');
-    this.load.image('atari', 'assets/sprites/atari400.png');
-    this.load.image('bikkuriman', 'assets/sprites/bikkuriman.png');
+    preload () {
+        this.load.image('beball', 'assets/sprites/beball1.png');
+        this.load.image('atari', 'assets/sprites/atari400.png');
+        this.load.image('bikkuriman', 'assets/sprites/bikkuriman.png');
     }
 
-    create ()
-    {
-    this.add.sprite(200, 300, 'beball');
-    this.add.sprite(500, 300, 'atari');
-    this.add.sprite(800, 300, 'bikkuriman');
+    create () {
+        this.add.sprite(200, 300, 'beball');
+        this.add.sprite(500, 300, 'atari');
+        this.add.sprite(800, 300, 'bikkuriman');
     }
 }
 
@@ -30,4 +26,3 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
