@@ -1,33 +1,29 @@
-class Example extends Phaser.Scene
-{
-    constructor ()
-    {
+class Example extends Phaser.Scene {
+    constructor () {
         super();
     }
 
-    preload ()
-    {
+    preload () {
     }
 
-    create ()
-    {
-            let graphics = this.add.graphics();
+    create () {
+        const graphics = this.add.graphics();
 
-    graphics.lineStyle(20, 0x2ECC40);
+        graphics.lineStyle(20, 0x2ECC40);
 
-    graphics.strokeRect(50, 50, 100, 40);
+        graphics.strokeRect(50, 50, 100, 40);
 
-    graphics.strokeCircle(600, 400, 64);
+        graphics.strokeCircle(600, 400, 64);
 
-    graphics.beginPath();
+        graphics.beginPath();
 
-    graphics.moveTo(400, 100);
-    graphics.lineTo(200, 278);
-    graphics.lineTo(340, 430);
-    graphics.lineTo(650, 80);
+        graphics.moveTo(400, 100);
+        graphics.lineTo(200, 278);
+        graphics.lineTo(340, 430);
+        graphics.lineTo(650, 80);
 
-    graphics.closePath();
-    graphics.strokePath();
+        graphics.closePath();
+        graphics.strokePath();
     }
 }
 
@@ -41,4 +37,3 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
