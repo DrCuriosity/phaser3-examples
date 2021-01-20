@@ -32,6 +32,7 @@ class Example extends Phaser.Scene
 
           radius1 += 64;
           radius2 += 64;
+        }
     }
 }
 
