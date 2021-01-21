@@ -89,7 +89,6 @@ const config = {
     scene: [Example]
 };
 
-
 const game = new Phaser.Game(config);
 
 // https://twitter.com/lexaloffle/status/1003303393572425731
