@@ -1,4 +1,4 @@
-class CircleSpin extends Phaser.Scene
+class Example extends Phaser.Scene
 {
     constructor ()
     {
@@ -27,21 +27,16 @@ class CircleSpin extends Phaser.Scene
 
     update ()
     {
-        console.log("update");
-        console.log("timeInc", this.timeInc);
-
         this.timeInc += 0.03;
 
         this.timeInc = Phaser.Math.Wrap(this.timeInc, -32765, 32765);
-        console.log("timeInc", this.timeInc);
 
         this.graphics.clear();
 
         let f = this.timeInc / 9;
-        console.log("f", f);
 
         let n = 650 + 60 * this.sin(f / 3);
-        console.log("n", n);
+
         for (let i = 1; i < n; i++)
         {
             let a = f + Math.random();
@@ -67,7 +62,7 @@ class CircleSpin extends Phaser.Scene
 
             if (z > 0.1)
             {
-                console.log("running graphics code");
+
                 this.graphics.fillStyle(this.palette[c]);
 
                 if (i > 400)
@@ -82,11 +77,8 @@ class CircleSpin extends Phaser.Scene
                 // graphics.fillStyle(palette[c / 4]);
                 // graphics.fillCircle(x, 128 - y, e);
             }
-
         }
-        console.log = () => {};
     }
-
 }
 
 const config = {
@@ -94,7 +86,7 @@ const config = {
     parent: 'phaser-example',
     width: 800,
     height: 600,
-    scene: [CircleSpin]
+    scene: [Example]
 };
 
 
