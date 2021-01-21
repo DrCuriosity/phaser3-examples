@@ -7,6 +7,7 @@ class PhaserLogo3D extends Phaser.Scene
 {
     constructor ()
     {
+        super();
         this.graphics = undefined;
         this.s = undefined;
         this.r = undefined;
@@ -16,19 +17,19 @@ class PhaserLogo3D extends Phaser.Scene
         this.logos = undefined;
         this.thickness = undefined;
         this.alpha = undefined;
+        this.hsv = Phaser.Display.Color.HSVColorWheel();
 
     }
+
     create ()
     {
         this.graphics = this.add.graphics();
 
-        let hsv = Phaser.Display.Color.HSVColorWheel();
-
         this.colors = [];
 
-        for (let i = 0; i < hsv.length; i += 4)
+        for (let i = 0; i < this.hsv.length; i += 4)
         {
-            this.colors.push(hsv[i].color);
+            this.colors.push(this.hsv[i].color);
         }
 
         // colors = [ 0x650a05, 0xa00d05, 0xcd1106, 0xf53719, 0xf25520, 0xf26f21, 0xf49214, 0xf6a90a, 0xfad400, 0xfef700, 0xffff45, 0xffffc4, 0xffffff ];
@@ -85,7 +86,7 @@ class PhaserLogo3D extends Phaser.Scene
 
             // drawLogo(colors[i], -380, -100 + ((i * 2) * Math.sin(r * 2)), scale, s[i]);
 
-            drawLogo(this.colors[i], -380 + ((i * 2) * Math.sin(this.r * 2)), -100 + ((i * 2) * Math.cos(this.r * 2)), scale, this.s[i]);
+            this.drawLogo(this.colors[i], -380 + ((i * 2) * Math.sin(this.r * 2)), -100 + ((i * 2) * Math.cos(this.r * 2)), scale, this.s[i]);
 
             if (this.go)
             {
@@ -119,7 +120,7 @@ class PhaserLogo3D extends Phaser.Scene
         let top = y + 0;
         let mid = y + 100;
         let bot = y + 200;
-        let this.s = 30;
+        let s = 30;
 
         this.graphics.save();
         this.graphics.translateCanvas(400, 300);
@@ -138,7 +139,7 @@ class PhaserLogo3D extends Phaser.Scene
 
         //  H
 
-        x += w + this.s;
+        x += w + s;
 
         this.graphics.moveTo(x, top);
         this.graphics.lineTo(x, bot);
@@ -149,7 +150,7 @@ class PhaserLogo3D extends Phaser.Scene
 
         //  A
 
-        x += w + this.s;
+        x += w + s;
 
         this.graphics.moveTo(x, bot);
         this.graphics.lineTo(x + (w * 0.75), top);
@@ -157,7 +158,7 @@ class PhaserLogo3D extends Phaser.Scene
 
         //  S
 
-        x += ((w * 0.75) * 2) + this.s;
+        x += ((w * 0.75) * 2) + s;
 
         this.graphics.moveTo(x + w, top);
         this.graphics.lineTo(x, top);
@@ -168,7 +169,7 @@ class PhaserLogo3D extends Phaser.Scene
 
         //  E
 
-        x += w + this.s;
+        x += w + s;
 
         this.graphics.moveTo(x + w, top);
         this.graphics.lineTo(x, top);
@@ -179,7 +180,7 @@ class PhaserLogo3D extends Phaser.Scene
 
         //  R
 
-        x += w + this.s;
+        x += w + s;
 
         this.graphics.moveTo(x, top);
         this.graphics.lineTo(x + w, top);
