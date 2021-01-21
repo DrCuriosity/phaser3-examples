@@ -1,4 +1,4 @@
-class MultipleStrokeRects extends Phaser.Scene {
+class Example extends Phaser.Scene {
 
     constructor () {
         super();
@@ -76,6 +76,6 @@ const config = {
     height: 600,
     type: Phaser.CANVAS,
     parent: 'phaser-example',
-    scene: [MultipleStrokeRects]
+    scene: [Example]
 };
 const game = new Phaser.Game(config);
