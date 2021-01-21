@@ -1,12 +1,12 @@
-class Example extends Phaser.Scene {
-    constructor () {
+class Example extends Phaser.Scene
+{
+    constructor ()
+    {
         super();
     }
 
-    preload () {
-    }
-
-    create () {
+    create ()
+    {
         const graphics = this.add.graphics();
 
         graphics.lineStyle(20, 0x2ECC40);
@@ -27,7 +27,8 @@ class Example extends Phaser.Scene {
     }
 }
 
-const config = {
+const config =
+{
     width: 800,
     height: 600,
     type: Phaser.WEBGL,
